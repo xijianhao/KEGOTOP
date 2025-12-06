@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import {NextIntlClientProvider} from 'next-intl';
-import {getTranslations, getLocale} from 'next-intl/server';
+import {getTranslations, getLocale, getMessages} from 'next-intl/server';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,12 +30,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
+  const messages = await getMessages();
   return (
-    <NextIntlClientProvider>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <html lang={locale}>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <LanguageSwitcher />
           {children}
         </body>
       </html>

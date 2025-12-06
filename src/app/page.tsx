@@ -80,7 +80,7 @@ export default function Home() {
           fontWeight: 'normal',
           opacity: 0.9 
         }}>
-          社交平台
+          {t('contactMe')}
         </h2>
         
         <div className="profile-social-grid">
