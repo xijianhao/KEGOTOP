@@ -1,0 +1,18 @@
+{
+  "HomePage": {
+    "title": "我的博客",
+    "name": "席剑豪",
+    "occupation": "前端开发",
+    "location": "中国大陆，北京",
+    "email": "邮箱",
+    "emailLabel": "邮箱:",
+    "blogLabel": "博客:",
+    "wechat": "微信",
+    "xiaohongshu": "小红书",
+    "instagram": "Instagram"
+  },
+  "Metadata": {
+    "title": "KeGoTop",
+    "description": "席剑豪的个人博客"
+  }
+}

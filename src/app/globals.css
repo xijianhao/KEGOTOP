@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-container {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+}
+
+.profile-social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  align-items: start;
+  max-width: 600px;
+  width: 100%;
+}
+
+.profile-social-item {
+  width: 120px;
+  height: 120px;
+}
+
+@media (max-width: 640px) {
+  .profile-container {
+    gap: 20px;
+    padding: 16px;
+  }
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-social-item {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-social-grid {
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 240px;
+  }
+}
