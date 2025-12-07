@@ -2,6 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import {useTranslations} from 'next-intl';
+import meImage from '@/assets/images/me.webp';
+import wxImage from '@/assets/images/wx.webp';
+import xhsImage from '@/assets/images/xhs.jpg';
+import insImage from '@/assets/images/ins.jpg';
+import tgImage from '@/assets/images/tg.jpg';
 
 export default function Home() {
   const t = useTranslations('HomePage');
@@ -15,7 +20,7 @@ export default function Home() {
         flexShrink: 0
       }}>
         <Image 
-          src="/me.webp" 
+          src={meImage} 
           alt={t('name')}
           width={120}
           height={120}
@@ -33,7 +38,31 @@ export default function Home() {
       }}>
         <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 'bold' }}>{t('name')}</h1>
         <p style={{ margin: 0, fontSize: '16px', opacity: 0.9 }}>{t('occupation')}</p>
-        <p style={{ margin: 0, fontSize: '14px', opacity: 0.8 }}>{t('location')}</p>
+        <p style={{ 
+          margin: 0, 
+          fontSize: '14px', 
+          opacity: 0.8,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
+          justifyContent: 'center'
+        }}>
+          <svg 
+            width="14" 
+            height="14" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+            style={{ opacity: 0.8, flexShrink: 0 }}
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          {t('location')}
+        </p>
       </div>
 
       {/* 联系方式 */}
@@ -98,7 +127,7 @@ export default function Home() {
               boxSizing: 'border-box'
             }}>
               <Image 
-                src="/wx.webp" 
+                src={wxImage} 
                 alt={t('wechat')}
                 width={104}
                 height={104}
@@ -126,7 +155,7 @@ export default function Home() {
               boxSizing: 'border-box'
             }}>
               <Image 
-                src="/xhs.jpg" 
+                src={xhsImage} 
                 alt={t('xiaohongshu')}
                 width={104}
                 height={104}
@@ -154,7 +183,7 @@ export default function Home() {
               boxSizing: 'border-box'
             }}>
               <Image 
-                src="/ins.jpg" 
+                src={insImage} 
                 alt={t('instagram')}
                 width={104}
                 height={104}
@@ -166,6 +195,34 @@ export default function Home() {
               />
             </div>
             <span style={{ fontSize: '14px', opacity: 0.9 }}>{t('instagram')}</span>
+          </div>
+
+          {/* Telegram二维码 */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '8px'
+          }}>
+            <div className="profile-social-item" style={{
+              backgroundColor: '#fff',
+              borderRadius: '8px',
+              padding: '8px',
+              boxSizing: 'border-box'
+            }}>
+              <Image 
+                src={tgImage} 
+                alt={t('telegram')}
+                width={104}
+                height={104}
+                style={{ 
+                  objectFit: 'contain',
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+            </div>
+            <span style={{ fontSize: '14px', opacity: 0.9 }}>{t('telegram')}</span>
           </div>
         </div>
       </div>
