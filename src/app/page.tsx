@@ -93,6 +93,17 @@ export default function Home() {
              blog.keepgoing.top
           </Link>
         </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ opacity: 0.8 }}>{t('scheduleLabel')}</span>
+          <Link 
+            href="https://schedule.keepgoing.top" 
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#fff', textDecoration: 'none', opacity: 0.9 }}
+          >
+             schedule.keepgoing.top
+          </Link>
+        </div>
       </div>
 
       {/* 社交链接区域 */}
